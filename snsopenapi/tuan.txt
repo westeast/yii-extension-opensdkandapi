@@ -1,1 +1,4 @@
 https://github.com/tjproject/project
+
+
+preg_match('/^([\d]+,)+[\d]+$/','123,3,4,5,4,123413')
