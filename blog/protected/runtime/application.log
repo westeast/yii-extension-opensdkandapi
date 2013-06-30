@@ -15,3 +15,42 @@ Stack trace:
 REQUEST_URI=/yii/blog/index.php?r=comment/admin
 HTTP_REFERER=http://localhost/yii/blog/index.php?r=comment/create
 ---
+2013/06/30 11:24:34 [error] [exception.CException] exception 'CException' with message 'Property "User.salt" is not defined.' in D:\AppServ\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\AppServ\www\yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('salt')
+#1 D:\AppServ\www\yii\blog\protected\models\User.php(103): CActiveRecord->__get('salt')
+#2 D:\AppServ\www\yii\blog\protected\components\UserIdentity.php(22): User->validatePassword('demo')
+#3 D:\AppServ\www\yii\blog\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 D:\AppServ\www\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 D:\AppServ\www\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 D:\AppServ\www\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 D:\AppServ\www\yii\blog\protected\controllers\SiteController.php(94): CModel->validate()
+#8 D:\AppServ\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 D:\AppServ\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\AppServ\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\AppServ\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\AppServ\www\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 D:\AppServ\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 D:\AppServ\www\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 D:\AppServ\www\yii\blog\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/blog/index.php?r=site/login
+HTTP_REFERER=http://localhost/yii/blog/index.php?r=site/login
+---
+2013/06/30 11:41:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\AppServ\www\yii\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 D:\AppServ\www\yii\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\AppServ\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\AppServ\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\AppServ\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\AppServ\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\AppServ\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\AppServ\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\AppServ\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 D:\AppServ\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 D:\AppServ\www\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 D:\AppServ\www\yii\blog\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/blog/index.php?r=post/admin
+HTTP_REFERER=http://localhost/yii/blog/index.php?r=post
+---
